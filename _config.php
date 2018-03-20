@@ -6,9 +6,9 @@
 
 /**
  * Define for file includes. The certs directory is best stored out of web root so moving the directory
- * and updating the reference to BASE_PATH is the best way to ensure things keep working
+ * and updating the reference to XERO_BASE_PATH is the best way to ensure things keep working
  */
-define('BASE_PATH',dirname(__FILE__));
+define('XERO_BASE_PATH',dirname(__FILE__));
 
 /**
  * Define which app type you are using:
@@ -47,8 +47,8 @@ $signatures = array(
 );
 
 if (XRO_APP_TYPE=="Private"||XRO_APP_TYPE=="Partner") {
-    $signatures['rsa_private_key']= BASE_PATH . '/certs/privatekey.pem';
-    $signatures['rsa_public_key']= BASE_PATH . '/certs/publickey.cer';
+    $signatures['rsa_private_key']= XERO_BASE_PATH . '/certs/privatekey.pem';
+    $signatures['rsa_public_key']= XERO_BASE_PATH . '/certs/publickey.cer';
 }
 
 /** ENTRUST CERTIFICATE DEPRECATED
@@ -58,8 +58,8 @@ if (XRO_APP_TYPE=="Private"||XRO_APP_TYPE=="Partner") {
  * openssl pkcs12 -in entrust-client.p12 -nocerts -out entrust-private.pem <- you will be prompted to enter a password
  
 if (XRO_APP_TYPE=="Partner") {
-    $signatures['curl_ssl_cert'] = BASE_PATH . '/certs/entrust-cert.pem';
+    $signatures['curl_ssl_cert'] = XERO_BASE_PATH . '/certs/entrust-cert.pem';
     $signatures['curl_ssl_password'] = '1234';
-    $signatures['curl_ssl_key'] = BASE_PATH . '/certs/entrust-private-nopass.pem';
+    $signatures['curl_ssl_key'] = XERO_BASE_PATH . '/certs/entrust-private-nopass.pem';
 }
 */
