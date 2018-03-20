@@ -64,9 +64,9 @@ class XeroOAuth {
 				'authorize_path' => 'oauth/Authorize' 
 		);
 		
-		// Remove forced dependency on BASE_PATH constant.
+		// Remove forced dependency on XERO_BASE_PATH constant.
 		// Note that __DIR__ is PHP 5.3 and above only.
-		$base_path = defined ( 'BASE_PATH' ) ? BASE_PATH : dirname ( __DIR__ );
+		$base_path = defined ( 'XERO_BASE_PATH' ) ? XERO_BASE_PATH : dirname ( __DIR__ );
 		
 		$this->_xero_curl_options = array ( // you probably don't want to change any of these curl values
 				'curl_connecttimeout' => 30,
